@@ -1,9 +1,14 @@
 function bmıCalculator() {
+    var btn = document.getElementById("calculate").value;
     var height = document.getElementById("height").value;
     var weight = document.getElementById("weight").value;
+    
 
     height = height / 100;
     var bmıcalculate = weight / (height*height);
+
+    bmıcalculate = bmıcalculate.toFixed(2);
+    document.getElementById("result").innerHTML = bmıcalculate;
 
     var status = "";
 
@@ -20,5 +25,5 @@ function bmıCalculator() {
         status = "Obese";
     }
 
-    document.querySelector('.comment').innerHTML = `Comment you are <span id="comment"> ${status}</span>`;
+    document.querySelector('.comment').innerHTML = `Comment you are :<span id="comment"> ${status}</span>`;
 }
